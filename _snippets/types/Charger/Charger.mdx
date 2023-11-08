@@ -1,0 +1,27 @@
+<ResponseField name="id" type="integer">
+  The identifier of the charger
+</ResponseField>
+<ResponseField name="identity" type="string">
+  The identity of the charger
+</ResponseField>
+<ResponseField name="connection_status" type="ConnectionStatus">
+  The connection status of the charger
+  <Snippet file="types/Charger/ConnectionStatus.mdx" />
+</ResponseField>
+<ResponseField name="status" type="?Status">
+  The status of the charger
+  <Snippet file="types/Charger/Status.mdx" />
+</ResponseField>
+<ResponseField name="error" type="?Error">
+  The error status of the charger
+  <Snippet file="types/Charger/Error.mdx" />
+</ResponseField>
+<ResponseField name="error_info" type="?string">
+  Extra error information for the charger
+</ResponseField>
+<ResponseField name="created_at" type="string">
+  The date the charger was created
+</ResponseField>
+<ResponseField name="updated_at" type="string">
+  The date the charger was last updated
+</ResponseField>

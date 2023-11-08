@@ -68,6 +68,7 @@
       "group": "Chargers",
       "pages": [
         "api-reference/chargers/get",
+        "api-reference/chargers/charger",
         "api-reference/chargers/metervalues"
       ]
     }

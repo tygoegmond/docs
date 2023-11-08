@@ -1,0 +1,26 @@
+<ResponseField name="id" type="integer">
+  The identifier of the connector
+</ResponseField>
+<ResponseField name="charger_id" type="integer">
+  The identifier of the charger this connector belongs to
+</ResponseField>
+<ResponseField name="connector_id" type="integer">
+  The connector number
+</ResponseField>
+<ResponseField name="status" type="Status">
+  The status of the connector
+  <Snippet file="types/Charger/Connector/Status.mdx" />
+</ResponseField>
+<ResponseField name="error" type="?Error">
+  The error status of the connector
+  <Snippet file="types/Charger/Error.mdx" />
+</ResponseField>
+<ResponseField name="error_info" type="?string">
+  Extra error information for the connector
+</ResponseField>
+<ResponseField name="created_at" type="string">
+  The date the connector was created
+</ResponseField>
+<ResponseField name="updated_at" type="string">
+  The date the connector was last updated
+</ResponseField>
