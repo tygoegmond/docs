@@ -1,13 +1,25 @@
 ---
-title: 'Get Teams'
-api: 'GET /teams'
-description: 'Returns all teams from the system that the user has access to'
+title: 'Create a new team'
+api: 'POST /teams'
+description: 'Creates a new team for the user'
 ---
+
+## Request
+### Body
+<ParamField body="name" type="string">
+  The name of the new team
+</ParamField>
+<ParamField body="email" type="string">
+  The email of the new team
+</ParamField>
+<ParamField body="type" type="TeamType">
+  The type of the new team
+</ParamField>
 
 ## Response
 
-<ResponseField name="data" type="Team[]">
-  Array of teams
+<ResponseField name="data" type="Team">
+  The newly created team
   <Expandable title="Team">
     <ResponseField name="id" type="integer">
       The identifier of the team
@@ -43,24 +55,14 @@ description: 'Returns all teams from the system that the user has access to'
 <CodeGroup>
   ```json 200
   {
-    "data": [
-        {
-            "id": 402789,
-            "name": "John's Team",
-            "type": "Personal",
-            "email": "john.doe@gmail.com",
-            "created_at": "2023-08-23T15:48:46.000000Z",
-            "updated_at": "2023-08-30T09:46:26.000000Z"
-        },
-        {
-            "id": 477669,
-            "name": "Amce Corp.",
-            "type": "Wholesaler",
-            "email": "info@amce.com",
-            "created_at": "2023-08-24T11:13:13.000000Z",
-            "updated_at": "2023-08-24T11:13:13.000000Z"
-        }
-    ]
+    "data": {
+        "id": 402789,
+        "name": "John's Team",
+        "type": "Personal",
+        "email": "john.doe@gmail.com",
+        "created_at": "2023-09-26T11:39:39.000000Z",
+        "updated_at": "2023-09-26T11:39:39.000000Z"
+    }
   }
   ```
   ```json 401 (Unauthorized)

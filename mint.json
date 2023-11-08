@@ -72,7 +72,8 @@
     {
       "group": "Teams",
       "pages": [
-        "api-reference/teams/get"
+        "api-reference/teams/get",
+        "api-reference/teams/create"
       ]
     }
   ],
