@@ -31,6 +31,12 @@
       "url": "api-reference"
     }
   ],
+  "api": {
+    "baseUrl": "https://cloud.volttime.com/api/v2",
+    "auth": {
+      "method": "bearer"
+    }
+  },
   "anchors": [],
   "navigation": [
     {
@@ -58,11 +64,9 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Account",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/account/get"
       ]
     }
   ],
