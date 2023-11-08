@@ -68,6 +68,12 @@
       "pages": [
         "api-reference/account/get"
       ]
+    },
+    {
+      "group": "Teams",
+      "pages": [
+        "api-reference/teams/get"
+      ]
     }
   ],
   "footerSocials": {

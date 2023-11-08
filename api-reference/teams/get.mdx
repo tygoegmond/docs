@@ -1,0 +1,75 @@
+---
+title: 'Get Teams'
+api: 'GET /teams'
+description: 'Returns the authenticated user'
+---
+
+<Tip>
+Requires the `team-details` scope
+</Tip>
+
+## Response
+
+<ResponseField name="data" type="Team[]">
+  Array of teams
+  <Expandable title="Team">
+    <ResponseField name="id" type="integer">
+      The identifier of the team
+    </ResponseField>
+    <ResponseField name="name" type="string">
+      The name of the team
+    </ResponseField>
+    <ResponseField name="type" type="TeamType">
+      The type of the team
+      <Expandable title="TeamType">
+        `Personal`
+        `HOA`
+        `Retailer`
+        `Installer`
+        `Wholesaler`
+        `Company`
+        `OEM`
+        `Other`
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="email" type="string">
+      The email of the team
+    </ResponseField>
+    <ResponseField name="created_at" type="string">
+      The date the team was created
+    </ResponseField>
+    <ResponseField name="updated_at" type="string">
+      The date the team was last updated
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<CodeGroup>
+  ```json 200
+  {
+    "data": [
+        {
+            "id": 402789,
+            "name": "John's Team",
+            "type": "Personal",
+            "email": "john.doe@gmail.com",
+            "created_at": "2023-08-23T15:48:46.000000Z",
+            "updated_at": "2023-08-30T09:46:26.000000Z"
+        },
+        {
+            "id": 477669,
+            "name": "Amce Corp.",
+            "type": "Wholesaler",
+            "email": "info@amce.com",
+            "created_at": "2023-08-24T11:13:13.000000Z",
+            "updated_at": "2023-08-24T11:13:13.000000Z"
+        }
+    ]
+  }
+  ```
+  ```json 401 (Unauthorized)
+    {
+      "message": "Unauthenticated."
+    }
+  ```
+</CodeGroup>
