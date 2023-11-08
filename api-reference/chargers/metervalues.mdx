@@ -1,0 +1,58 @@
+---
+title: 'Get MeterValues'
+api: 'GET /teams/{team_id}/chargers/{charger_id}/metervalues'
+description: 'Returns the meter values of the charger based on the parameters'
+---
+## Request
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
+<ParamField path="charger_id" type="integer" hidden required />
+<ParamField query="date_from" type="datetime" hidden required />
+<ParamField query="date_to" type="datetime" hidden required />
+<ParamField query="context" type="Context" hidden />
+<ParamField query="measurand" type="Measurand" hidden />
+<ParamField query="phase" type="Phase" hidden />
+<ParamField query="location" type="Location" hidden />
+<ParamField query="unit" type="Unit" hidden />
+
+<Tabs>
+  <Tab title="Path">
+    <ParamField path="team_id" type="integer" required>
+      The id of the team
+    </ParamField>
+    <ParamField path="team_id" type="integer" required>
+      The id of the charger
+    </ParamField>
+  </Tab>
+  <Tab title="Query">
+    <ParamField query="date_from" type="datetime" required>
+      The start date of the period to retrieve the meter values for
+    </ParamField>
+    <ParamField query="date_to" type="datetime" required>
+      The end date of the period to retrieve the meter values for
+    </ParamField>
+    <ParamField query="context" type="Context">
+      The context of the meter value
+      <Snippet file="types/Charger/MeterValues/Context.mdx" />
+    </ParamField>
+    <ParamField query="measurand" type="Measurand">
+      The measurand of the meter value
+      <Snippet file="types/Charger/MeterValues/Measurand.mdx" />
+    </ParamField>
+    <ParamField query="phase" type="Phase">
+      The phase of the meter value
+      <Snippet file="types/Charger/MeterValues/Phase.mdx" />
+    </ParamField>
+    <ParamField query="location" type="Location">
+      The location of the meter value
+      <Snippet file="types/Charger/MeterValues/Location.mdx" />
+    </ParamField>
+    <ParamField query="unit" type="Unit">
+      The unit of the meter value
+      <Snippet file="types/Charger/MeterValues/Unit.mdx" />
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Response
+<Info>Work in progress</Info>

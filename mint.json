@@ -79,7 +79,8 @@
     {
       "group": "Chargers",
       "pages": [
-        "api-reference/chargers/get"
+        "api-reference/chargers/get",
+        "api-reference/chargers/metervalues"
       ]
     }
   ],

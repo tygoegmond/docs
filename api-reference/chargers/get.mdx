@@ -31,40 +31,15 @@ description: 'Returns all the chargers that the specified team has access to'
         </ResponseField>
         <ResponseField name="connection_status" type="ConnectionStatus">
           The connection status of the charger
-          <Expandable title="ConnectionStatus">
-            `never_seen`
-            `offline`
-            `online`
-          </Expandable>
+          <Snippet file="types/Charger/ConnectionStatus.mdx" />
         </ResponseField>
         <ResponseField name="status" type="?Status">
           The status of the charger
-          <Expandable title="Status">
-            `Available`
-            `Unavailable`
-            `Faulted`
-          </Expandable>
+          <Snippet file="types/Charger/Status.mdx" />
         </ResponseField>
         <ResponseField name="error" type="?Error">
           The error status of the charger
-          <Expandable title="Error">
-            `ConnectorLockFailure`
-            `EVCommunicationError`
-            `GroundFailure`
-            `HighTemperature`
-            `InternalError`
-            `LocalListConflict`
-            `NoError`
-            `OtherError`
-            `OverCurrentFailure`
-            `OverVoltage`
-            `PowerMeterFailure`
-            `PowerSwitchFailure`
-            `ReaderFailure`
-            `ResetFailure`
-            `UnderVoltage`
-            `WeakSignalLevel`
-          </Expandable>
+          <Snippet file="types/Charger/Error.mdx" />
         </ResponseField>
         <ResponseField name="error_info" type="?string">
           Extra error information for the charger
@@ -121,5 +96,3 @@ description: 'Returns all the chargers that the specified team has access to'
     </CodeGroup>
   </Tab>
 </Tabs>
-
-
