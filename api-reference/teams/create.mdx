@@ -6,18 +6,17 @@ description: 'Creates a new team for the user'
 
 ## Request
 ### Body
-<ParamField body="name" type="string">
+<ParamField body="name" type="string" required>
   The name of the new team
 </ParamField>
-<ParamField body="email" type="string">
+<ParamField body="email" type="string" required>
   The email of the new team
 </ParamField>
-<ParamField body="type" type="TeamType">
+<ParamField body="type" type="TeamType" required>
   The type of the new team
 </ParamField>
 
 ## Response
-
 <ResponseField name="data" type="Team">
   The newly created team
   <Expandable title="Team">

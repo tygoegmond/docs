@@ -75,6 +75,12 @@
         "api-reference/teams/get",
         "api-reference/teams/create"
       ]
+    },
+    {
+      "group": "Chargers",
+      "pages": [
+        "api-reference/chargers/get"
+      ]
     }
   ],
   "footerSocials": {
