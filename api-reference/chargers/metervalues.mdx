@@ -3,6 +3,8 @@ title: 'Get MeterValues'
 api: 'GET /teams/{team_id}/chargers/{charger_id}/metervalues'
 description: 'Returns the meter values of the charger based on the parameters'
 ---
+<Note>This route is subject to rate limiting, allowing for a **maximum of 10 requests per 60 seconds**. We welcome your feedback on this rate limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Note>
+
 ## Request
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
@@ -14,6 +16,7 @@ description: 'Returns the meter values of the charger based on the parameters'
 <ParamField query="phase" type="Phase" hidden />
 <ParamField query="location" type="Location" hidden />
 <ParamField query="unit" type="Unit" hidden />
+<ParamField query="limit" type="integer" hidden />
 
 <Tabs>
   <Tab title="Path">
@@ -50,6 +53,10 @@ description: 'Returns the meter values of the charger based on the parameters'
     <ParamField query="unit" type="Unit">
       The unit of the meter value
       <Snippet file="types/Charger/MeterValues/Unit.mdx" />
+    </ParamField>
+    <ParamField query="limit" default="25" type="integer">
+      The amount of meter values to retrieve, limited to 1000 per request 
+      <Info>We welcome your feedback on the maximum limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Info>
     </ParamField>
   </Tab>
 </Tabs>
