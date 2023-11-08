@@ -83,6 +83,11 @@
       ]
     }
   ],
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
   "footerSocials": {
     "instagram": "https://instagram.com/volt_time",
     "github": "https://github.com/volttime",
