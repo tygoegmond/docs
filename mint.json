@@ -1,18 +1,18 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Volt Time",
+  "name": "Volt Time Cloud",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#54B6A5",
-    "light": "#07C983",
-    "dark": "#54B6A5",
+    "primary": "#092537",
+    "light": "#54B6A5",
+    "dark": "#092537",
     "anchors": {
-      "from": "#54B6A5",
-      "to": "#07C983"
+      "from": "#092537",
+      "to": "#54B6A5"
     }
   },
   "topbarLinks": [
