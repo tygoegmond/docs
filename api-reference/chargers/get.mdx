@@ -4,6 +4,10 @@ api: 'GET /teams/{team_id}/chargers'
 description: 'Returns all the chargers that the specified team has access to'
 ---
 ## Request
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
+<ParamField query="page" type="integer" hidden />
+
 <Tabs>
   <Tab title="Path">
     <ParamField path="team_id" type="integer" required>

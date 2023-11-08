@@ -15,6 +15,7 @@ description: 'Creates a new team for the user'
     </ParamField>
     <ParamField body="type" type="TeamType" required>
       The type of the new team
+      <Snippet file="types/Team/TeamType.mdx" />
     </ParamField>
   </Tab>
 </Tabs>
@@ -33,16 +34,7 @@ description: 'Creates a new team for the user'
         </ResponseField>
         <ResponseField name="type" type="TeamType">
           The type of the team
-          <Expandable title="TeamType">
-            `Personal`
-            `HOA`
-            `Retailer`
-            `Installer`
-            `Wholesaler`
-            `Company`
-            `OEM`
-            `Other`
-          </Expandable>
+          <Snippet file="types/Team/TeamType.mdx" />
         </ResponseField>
         <ResponseField name="email" type="string">
           The email of the team
