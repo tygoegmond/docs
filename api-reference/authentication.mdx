@@ -1,0 +1,59 @@
+---
+title: 'Authentication'
+description: 'We use OAuth 2.0 to authenticate and authorize access to our API. This documentation will guide you through the authentication process.'
+---
+
+## Overview
+
+For authentication, we use the [OAuth 2.0](https://oauth.net/2/) protocol. OAuth 2.0 is a widely used protocol for securing APIs and allowing authorized access to protected resources. We provide OAuth 2.0 endpoints to authenticate and authorize access to our API. This documentation will guide you through the authentication process.
+
+## Endpoints
+
+Before you begin the authentication process, you should be aware of the two main endpoints used:
+
+1. **Authorize Endpoint**:
+   - URL: `https://cloud.volttime.com/oauth/authorize`
+   - Purpose: This endpoint is used to initiate the authorization process. Users will be redirected to this URL to grant or deny access to your application.
+
+2. **Token Endpoint**:
+   - URL: `https://cloud.volttime.com/oauth/token`
+   - Purpose: After the user has authorized access, this endpoint is used to exchange the authorization code for an access token, which can be used to make API requests on behalf of the user.
+
+## Authentication Flow
+
+### 1. Connect to the Volt Time Cloud
+
+To connect to the Volt Time Cloud and access its API, follow these steps:
+
+1. **User Initiation**: When a user initiates the connection process, redirect them to our 'Authorize' endpoint, where they will be prompted to log in and grant your application access.
+
+   - `client_id`: Your application's client ID.
+   - `redirect_uri`: The URL to which the user will be redirected after authorization. This should be a URL within your application.
+   - `response_type`: Set to "code" to request an authorization code.
+   - `scope`: Define the specific permissions you require for accessing resources.
+
+2. **User Authorization**: The user will be prompted to log in and approve the requested permissions.
+
+3. **Authorization Code**: Upon approval, the user will be redirected to the `redirect_uri`, and an authorization code will be included in the URL as a query parameter.
+
+<Tip>Ensure that the `redirect_uri` matches the one you have supplied to us.</Tip>
+
+### 2. Token Exchange
+
+After receiving the authorization code, you need to exchange it for an access token by making a POST request to our 'Token' endpoint.
+
+   - `client_id`: Your application's client ID.
+   - `client_secret`: Your application's client secret.
+   - `grant_type`: Set to "authorization_code."
+   - `code`: The authorization code received in the previous step.
+   - `redirect_uri`: The same redirect URI used in the authorization request.
+
+### 3. Access the API
+
+Once you obtain an access token, you can use it to make API requests on behalf of the user. Include the access token in the `Authorization` header of your API requests.
+
+   ```
+   GET /api/resource
+   Host: https://cloud.volttime.com
+   Authorization: Bearer YOUR_ACCESS_TOKEN
+   ```
