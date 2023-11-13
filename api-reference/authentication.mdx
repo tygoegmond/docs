@@ -5,7 +5,7 @@ description: 'We use OAuth 2.0 to authenticate and authorize access to our API. 
 
 ## Overview
 
-For authentication, we use the [OAuth 2.0](https://oauth.net/2/) protocol. OAuth 2.0 is a widely used protocol for securing APIs and allowing authorized access to protected resources. We provide OAuth 2.0 endpoints to authenticate and authorize access to our API. This documentation will guide you through the authentication process.
+For authentication, we use the [OAuth 2.0](https://oauth.net/2/) protocol. OAuth 2.0 is a widely used protocol for securing APIs and allowing authorized access to protected resources. We provide OAuth 2.0 endpoints to authenticate and authorize access to our API. Additionally, users have the option to authenticate using [Personal Access Tokens](#personal-access-tokens), offering a straightforward way to interact with our services programmatically.
 
 ## Endpoints
 
@@ -57,3 +57,41 @@ Once you obtain an access token, you can use it to make API requests on behalf o
    Host: https://cloud.volttime.com
    Authorization: Bearer YOUR_ACCESS_TOKEN
    ```
+   
+## Personal Access Tokens
+
+In addition to OAuth 2.0, we also offer the option for users to authenticate and access our API using personal access tokens. Personal access tokens provide a straightforward way for users to interact with our services programmatically without the need for a full OAuth 2.0 authorization flow.
+
+### Creating a Personal Access Token
+
+To create a personal access token, follow these steps:
+
+1. Navigate to your profile in the top-right corner of the Volt Time Cloud.
+
+2. Select the "Personal Access Tokens" option.
+
+3. Click on the "Create Token" button.
+
+4. Provide a name for your token.
+
+5. Specify the required scopes or permissions for the token.
+
+6. Click "Submit" to create your personal access token.
+
+<Warning>Keep your personal access token secure and do not share it publicly. Treat it like a password, as it grants access to your account and data.</Warning>
+
+### Using Personal Access Tokens
+
+Once you have generated a personal access token, you can use it to authenticate your API requests. Include the token in the `Authorization` header of your HTTP requests as follows:
+   ```http
+   GET /api/resource
+   Host: https://cloud.volttime.com
+   Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN
+   ```
+   Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the actual token you generated. This token will authenticate your requests and provide the necessary permissions as configured during token creation.
+
+### Revoking Personal Access Tokens
+
+If you ever need to revoke or regenerate a personal access token, you can do so from the "Personal Access Tokens" section in your profile settings.
+
+<Warning>Regularly review and manage your personal access tokens to maintain the security of your account.</Warning>
