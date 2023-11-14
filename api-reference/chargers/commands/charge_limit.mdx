@@ -1,0 +1,87 @@
+---
+title: 'Set Charge Limit'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/charge-limit'
+description: 'Sets a limit on the amount of energy that can be drawn from a connector'
+---
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
+<ParamField path="charger_id" type="integer" hidden required />
+<ParamField body="connector_id" type="integer" required hidden />
+<ParamField body="limit" type="float" required hidden />
+
+<Note>This route is subject to rate limiting, allowing for a **maximum of 8 requests per 60 seconds**. We welcome your feedback on this rate limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Note>
+
+<Info>Please be aware that the charge limit does not carry over from one transaction to another.</Info>
+
+## Request
+<Tabs>
+  <Tab title="Path">
+    <ParamField path="team_id" type="integer" required>
+      The id of the team
+    </ParamField>
+    <ParamField path="charger_id" type="integer" required>
+      The id of the charger
+    </ParamField>
+  </Tab>
+  <Tab title="Body">
+    <ParamField body="connector_id" type="integer" required>
+      The connector to set the limit on
+    </ParamField>
+    <ParamField body="limit" type="integer" required>
+      The limit in Amps
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+  <Tab title="Example">
+    <CodeGroup>
+      ```json 200
+      {
+        "message": "Accepted"
+      }
+      ```
+      ```json 400 (Rejected by charger)
+      {
+        "message": "Rejected"
+      }
+      ```
+      ```json 401 (Unauthorized)
+      {
+        "message": "Unauthenticated."
+      }
+      ```
+      ```json 404 (Not Found)
+      {
+        "message": "Cannot access this charger. Please check if the charger exists and you are a member of the team."
+      }
+      ```
+      ```json 400 (Charger not online)
+      {
+        "message": "Charger is not online."
+      }
+      ```
+      ```json 400 (Connector not found)
+      {
+        "message": "Cannot find the connector."
+      }
+      ```
+      ```json 400 (Connector not charging)
+      {
+        "message": "Connector is not charging."
+      }
+      ```
+      ```json 502 (Charger not reachable)
+      {
+        "message": "Charger not reachable, please try again later."
+      }
+      ```
+      ```json 504 (Hub not reachable)
+      {
+        "message": "Cannot connect to the Hub, please try again later. Check the latest status on https://status.volttime.com."
+      }
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>

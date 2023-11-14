@@ -70,9 +70,20 @@
       "pages": [
         "api-reference/chargers/get",
         "api-reference/chargers/create",
-        "api-reference/chargers/charger",
+        "api-reference/chargers/charger"
+      ]
+    },
+    {
+      "group": "Datapoints",
+      "pages": [
         "api-reference/chargers/metervalues",
         "api-reference/chargers/transactions"
+      ]
+    },
+    {
+      "group": "Commands",
+      "pages": [
+        "api-reference/chargers/commands/charge_limit"
       ]
     }
   ],
