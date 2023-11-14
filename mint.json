@@ -68,7 +68,8 @@
     {
       "group": "Sites",
       "pages": [
-        "api-reference/sites/get"
+        "api-reference/sites/get",
+        "api-reference/sites/create"
       ]
     },
     {
