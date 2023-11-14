@@ -71,7 +71,8 @@
         "api-reference/chargers/get",
         "api-reference/chargers/create",
         "api-reference/chargers/charger",
-        "api-reference/chargers/metervalues"
+        "api-reference/chargers/metervalues",
+        "api-reference/chargers/transactions"
       ]
     }
   ],

@@ -18,7 +18,7 @@ description: 'Creates a new charger'
 ## Response
 <Tabs>
   <Tab title="Data">
-    <ResponseField name="data" type="Team">
+    <ResponseField name="data" type="Charger">
       The newly created charger
       <Expandable title="Charger">
         <Snippet file="types/Charger/Charger.mdx" />
@@ -44,6 +44,11 @@ description: 'Creates a new charger'
       ```json 401 (Unauthorized)
       {
         "message": "Unauthenticated."
+      }
+      ```
+      ```json 404 (Not Found)
+      {
+        "message": "Cannot access this team. Please check if the team exists and you are a member of it."
       }
       ```
     </CodeGroup>
