@@ -1,0 +1,48 @@
+<ResponseField name="id" type="integer">
+  The identifier of the site
+</ResponseField>
+<ResponseField name="name" type="string">
+  The name of the site
+</ResponseField>
+<ResponseField name="street" type="string">
+  The street of the site
+</ResponseField>
+<ResponseField name="postal_code" type="string">
+  The postal code of the site
+</ResponseField>
+<ResponseField name="house_number" type="string">
+  The house number of the site
+</ResponseField>
+<ResponseField name="house_number_addition" type="string">
+  The addition to the house number of the site
+</ResponseField>
+<ResponseField name="city" type="string">
+  The city of the site
+</ResponseField>
+<ResponseField name="country" type="string">
+  The country of the site
+</ResponseField>
+<ResponseField name="provider_id" type="integer" deprecated>
+  The provider id of the site (deprecated)
+</ResponseField>
+<ResponseField name="phase" type="SitePhase">
+  The phase of main connection of the site
+  <Snippet file="types/Site/SitePhase.mdx" />
+</ResponseField>
+<ResponseField name="main_fuse_amperage" type="integer">
+  The main fuse amperage of the site
+</ResponseField>
+<ResponseField name="load_management" type="SiteLoadManagement">
+  The load management type of the site
+  <Snippet file="types/Site/SiteLoadManagement.mdx" />
+</ResponseField>
+<ResponseField name="net_type" type="SiteNetType">
+  The net type of the site
+  <Snippet file="types/Site/SiteNetType.mdx" />
+</ResponseField>
+<ResponseField name="created_at" type="string">
+  The date the site was created
+</ResponseField>
+<ResponseField name="updated_at" type="string">
+  The date the site was last updated
+</ResponseField>

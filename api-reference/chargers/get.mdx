@@ -6,7 +6,7 @@ description: 'Returns all the chargers that the specified team has access to'
 ## Request
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
-<ParamField query="page" type="integer" hidden />
+<Snippet file="hidden-pagination-fields.mdx" />
 
 <Tabs>
   <Tab title="Path">
@@ -15,9 +15,7 @@ description: 'Returns all the chargers that the specified team has access to'
     </ParamField>
   </Tab>
   <Tab title="Query">
-    <ParamField query="page" type="integer">
-      The page number to return
-    </ParamField>
+    <Snippet file="pagination-fields.mdx" />
   </Tab>
 </Tabs>
 

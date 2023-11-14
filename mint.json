@@ -66,6 +66,12 @@
       ]
     },
     {
+      "group": "Sites",
+      "pages": [
+        "api-reference/sites/get"
+      ]
+    },
+    {
       "group": "Chargers",
       "pages": [
         "api-reference/chargers/get",
