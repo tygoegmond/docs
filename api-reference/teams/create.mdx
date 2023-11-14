@@ -3,6 +3,10 @@ title: 'Create a new team'
 api: 'POST /teams'
 description: 'Creates a new team for the user'
 ---
+{/* Hidden fields for discovery */}
+<ParamField body="name" type="string" required hidden />
+<ParamField body="email" type="string" required hidden />
+<ParamField body="type" type="TeamType" required hidden />
 
 ## Request
 <Tabs>
