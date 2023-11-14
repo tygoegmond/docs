@@ -1,13 +1,19 @@
 ---
 title: 'Create a new charger'
-api: 'POST /chargers'
+api: 'POST /teams/{team_id}/chargers'
 description: 'Creates a new charger'
 ---
 {/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
 <ParamField body="identity" type="string" required hidden />
 
 ## Request
 <Tabs>
+  <Tab title="Path">
+    <ParamField path="team_id" type="integer" required>
+      The id of the team
+    </ParamField>
+  </Tab>
   <Tab title="Body">
     <ParamField body="identity" type="string" required>
       The identity of the new charger
