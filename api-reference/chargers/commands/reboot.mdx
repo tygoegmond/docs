@@ -1,18 +1,11 @@
 ---
-title: 'Set Charge Limit'
-api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/charge-limit'
-description: 'Sets a limit on the amount of energy that can be drawn from a connector'
+title: 'Reboot'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/reboot'
+description: 'Reboots the specified charger'
 ---
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
 <ParamField path="charger_id" type="integer" hidden required />
-<ParamField body="connector_id" type="integer" required hidden />
-<ParamField body="limit" type="float" required hidden />
-
-<Note>This route is subject to rate limiting, allowing for a **maximum of 8 requests per 60 seconds**. We welcome your feedback on this rate limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Note>
-
-<Info>Please be aware that the charge limit does not carry over from one transaction to another.</Info>
-
 ## Request
 <Tabs>
   <Tab title="Path">
@@ -21,14 +14,6 @@ description: 'Sets a limit on the amount of energy that can be drawn from a conn
     </ParamField>
     <ParamField path="charger_id" type="integer" required>
       The id of the charger
-    </ParamField>
-  </Tab>
-  <Tab title="Body">
-    <ParamField body="connector_id" type="integer" required>
-      The connector to set the limit on
-    </ParamField>
-    <ParamField body="limit" type="integer" required>
-      The limit in Amps
     </ParamField>
   </Tab>
 </Tabs>
