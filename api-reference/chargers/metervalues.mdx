@@ -17,6 +17,8 @@ description: 'Returns the meter values of the charger based on the parameters'
 <ParamField query="location" type="Location" hidden />
 <ParamField query="unit" type="Unit" hidden />
 <ParamField query="limit" type="integer" hidden />
+<ParamField query="order_by" type="string" hidden />
+<Snippet file="hidden-pagination-fields.mdx" />
 
 <Tabs>
   <Tab title="Path">
@@ -58,6 +60,11 @@ description: 'Returns the meter values of the charger based on the parameters'
       The amount of meter values to retrieve, limited to 1000 per request 
       <Info>We welcome your feedback on the maximum limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Info>
     </ParamField>
+    <ParamField query="order_by" default="asc" type="string">
+      The order of the meter values
+      <Snippet file="types/Global/OrderBy.mdx" />
+    </ParamField>
+    <Snippet file="pagination-fields.mdx" />
   </Tab>
 </Tabs>
 

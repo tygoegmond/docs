@@ -7,6 +7,7 @@ description: 'Returns the transactions of a charger'
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
 <ParamField path="charger_id" type="integer" hidden required />
+<ParamField query="order_by" type="string" hidden />
 <Snippet file="hidden-pagination-fields.mdx" />
 
 <Tabs>
@@ -19,6 +20,10 @@ description: 'Returns the transactions of a charger'
     </ParamField>
   </Tab>
   <Tab title="Query">
+    <ParamField query="order_by" default="asc" type="string">
+      The order of the transactions
+      <Snippet file="types/Global/OrderBy.mdx" />
+    </ParamField>
     <Snippet file="pagination-fields.mdx" />
   </Tab>
 </Tabs>
