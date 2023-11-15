@@ -96,7 +96,8 @@
         "api-reference/chargers/commands/charge_limit",
         "api-reference/chargers/commands/reboot",
         "api-reference/chargers/commands/reset",
-        "api-reference/chargers/commands/lock"
+        "api-reference/chargers/commands/lock",
+        "api-reference/chargers/commands/unlock"
       ]
     }
   ],
