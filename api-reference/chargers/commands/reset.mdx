@@ -1,0 +1,72 @@
+---
+title: 'Reset'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/reset'
+description: 'Restores the charger to a state resembling a freshly booted condition'
+---
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
+<ParamField path="charger_id" type="integer" hidden required />
+## Request
+<Tabs>
+  <Tab title="Path">
+    <ParamField path="team_id" type="integer" required>
+      The id of the team
+    </ParamField>
+    <ParamField path="charger_id" type="integer" required>
+      The id of the charger
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+  <Tab title="Example">
+    <CodeGroup>
+      ```json 200
+      {
+        "message": "Accepted"
+      }
+      ```
+      ```json 400 (Rejected by charger)
+      {
+        "message": "Rejected"
+      }
+      ```
+      ```json 401 (Unauthorized)
+      {
+        "message": "Unauthenticated."
+      }
+      ```
+      ```json 404 (Not Found)
+      {
+        "message": "Cannot access this charger. Please check if the charger exists and you are a member of the team."
+      }
+      ```
+      ```json 400 (Charger not online)
+      {
+        "message": "Charger is not online."
+      }
+      ```
+      ```json 400 (Connector not found)
+      {
+        "message": "Cannot find the connector."
+      }
+      ```
+      ```json 400 (Connector not charging)
+      {
+        "message": "Connector is not charging."
+      }
+      ```
+      ```json 502 (Charger not reachable)
+      {
+        "message": "Charger not reachable, please try again later."
+      }
+      ```
+      ```json 504 (Timeout)
+      {
+        "message": "The charger is not responding promptly. Alternatively, it's possible that a connection to the Hub cannot be established. Please retry later and monitor the latest status at https://status.volttime.com."
+      }
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>

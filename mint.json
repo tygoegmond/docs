@@ -92,7 +92,8 @@
       "group": "Commands",
       "pages": [
         "api-reference/chargers/commands/charge_limit",
-        "api-reference/chargers/commands/reboot"
+        "api-reference/chargers/commands/reboot",
+        "api-reference/chargers/commands/reset"
       ]
     }
   ],
