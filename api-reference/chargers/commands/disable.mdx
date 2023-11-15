@@ -1,7 +1,7 @@
 ---
-title: 'Lock Connector'
-api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/lock'
-description: 'Locks a connector so it cannot be used.'
+title: 'Disable Connector'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/disable'
+description: 'Disables a connector so it cannot be used'
 ---
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
@@ -22,7 +22,7 @@ description: 'Locks a connector so it cannot be used.'
   </Tab>
   <Tab title="Body">
     <ParamField body="connector_id" type="integer" required>
-      The connector to lock. If not specified, the whole charger will be locked.
+      The connector to disable. If not specified, the whole charger will be locked.
     </ParamField>
   </Tab>
 </Tabs>

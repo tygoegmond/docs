@@ -1,7 +1,7 @@
 ---
-title: 'Unlock Connector'
-api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/unlock'
-description: 'Unlocks a connector'
+title: 'Enable Connector'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/enable'
+description: 'Enables a connector'
 ---
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
@@ -22,7 +22,7 @@ description: 'Unlocks a connector'
   </Tab>
   <Tab title="Body">
     <ParamField body="connector_id" type="integer" required>
-      The connector to unlock. If not specified, the whole charger will be unlocked.
+      The connector to enable. If not specified, the whole charger will be unlocked.
     </ParamField>
   </Tab>
 </Tabs>
