@@ -1,0 +1,83 @@
+---
+title: 'Start Charging'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/commands/start'
+description: 'Starts a charging session on the specified connector'
+---
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required />
+<ParamField path="charger_id" type="integer" hidden required />
+<ParamField body="connector_id" type="integer" hidden />
+<ParamField body="id_tag" type="string" required hidden />
+
+## Request
+<Tabs>
+  <Tab title="Path">
+    <ParamField path="team_id" type="integer" required>
+      The id of the team
+    </ParamField>
+    <ParamField path="charger_id" type="integer" required>
+      The id of the charger
+    </ParamField>
+  </Tab>
+  <Tab title="Body">
+    <ParamField body="connector_id" type="integer">
+      The connector to start charging on
+    </ParamField>
+    <ParamField body="id_tag" type="string" required>
+      The id tag that the transaction needs to be started with
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+  <Tab title="Example">
+    <CodeGroup>
+      ```json 200
+      {
+        "message": "Accepted"
+      }
+      ```
+      ```json 400 (Rejected by charger)
+      {
+        "message": "Rejected"
+      }
+      ```
+      ```json 401 (Unauthorized)
+      {
+        "message": "Unauthenticated."
+      }
+      ```
+      ```json 404 (Not Found)
+      {
+        "message": "Cannot access this charger. Please check if the charger exists and you are a member of the team."
+      }
+      ```
+      ```json 400 (Charger not online)
+      {
+        "message": "Charger is not online."
+      }
+      ```
+      ```json 400 (Connector not found)
+      {
+        "message": "Cannot find the connector."
+      }
+      ```
+      ```json 400 (Connector not charging)
+      {
+        "message": "Connector is not charging."
+      }
+      ```
+      ```json 502 (Charger not reachable)
+      {
+        "message": "Charger not reachable, please try again later."
+      }
+      ```
+      ```json 504 (Timeout)
+      {
+        "message": "The charger is not responding promptly. Alternatively, it's possible that a connection to the Hub cannot be established. Please retry later and monitor the latest status at https://status.volttime.com."
+      }
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
