@@ -84,6 +84,12 @@
       ]
     },
     {
+      "group": "Meters",
+      "pages": [
+        "api-reference/meters/get"
+      ]
+    },
+    {
       "group": "Datapoints",
       "pages": [
         "api-reference/chargers/metervalues",
