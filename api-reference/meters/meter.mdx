@@ -1,0 +1,57 @@
+---
+title: 'Get Meter'
+api: 'GET /teams/{team_id}/meters/{meter_id}'
+description: 'Returns the specified meter'
+---
+## Request
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required/>
+<ParamField path="meter_id" type="integer" hidden required/>
+
+<Tabs>
+    <Tab title="Path">
+        <ParamField path="team_id" type="integer" required>
+            The id of the team
+        </ParamField>
+        <ParamField path="meter_id" type="integer" required>
+            The id of the meter
+        </ParamField>
+    </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+    <Tab title="Data">
+        <Snippet file="types/Meter/Meter.mdx"/>
+    </Tab>
+    <Tab title="Example">
+        <CodeGroup>
+            ```json 200
+            {
+                "data": {
+                    "id": 2,
+                    "type": "ct_meter",
+                    "latest_data": {
+                        "l1": 5900,
+                        "l2": 1100,
+                        "l3": -3100,
+                        "updated_at": "2024-04-30T15:10:59.637Z"
+                    },
+                    "created_at": "2024-04-30T13:53:52.000000Z",
+                    "updated_at": "2024-04-30T13:53:52.000000Z"
+                }
+            }
+            ```
+            ```json 401 (Unauthorized)
+            {
+                "message": "Unauthenticated."
+            }
+            ```
+            ```json 404 (Not Found)
+            {
+                "message": "Cannot find the meter. Please check if the meter exists and you are a member of the team."
+            }
+            ```
+        </CodeGroup>
+    </Tab>
+</Tabs>
