@@ -1,0 +1,56 @@
+---
+title: 'Update Proxy Settings'
+api: 'POST /teams/{team_id}/chargers/{charger_id}/proxy'
+description: 'Update the proxy settings of a charger'
+---
+## Request
+<ParamField path="team_id" type="integer" hidden required/>
+<ParamField path="charger_id" type="integer" hidden required/>
+<ParamField body="servers" type="array" required hidden />
+
+<Tabs>
+    <Tab title="Path">
+        <ParamField path="team_id" type="integer" required>
+            The id of the team
+        </ParamField>
+        <ParamField path="charger_id" type="integer" required>
+            The id of the charger
+        </ParamField>
+    </Tab>
+    <Tab title="Body">
+        <ParamField body="servers" type="ProxyServer[]" required>
+            Array of proxy servers
+            <Expandable title="ProxyServer">
+                <Snippet file="types/Charger/Proxy/CreateProxyServer.mdx"/>
+            </Expandable>
+        </ParamField>
+    </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+    <Tab title="Example">
+        <CodeGroup>
+            ```json 200
+            {
+                "message": "Proxy settings updated."
+            }
+            ```
+            ```json 500 (Proxy not available)
+            {
+                "message": "It's not possible to change proxy settings at the moment. Please try again later."
+            }
+            ```
+            ```json 401 (Unauthorized)
+            {
+                "message": "Unauthenticated."
+            }
+            ```
+            ```json 404 (Not Found)
+            {
+                "message": "Cannot access this team. Please check if the team exists and you are a member of it."
+            }
+            ```
+        </CodeGroup>
+    </Tab>
+</Tabs>

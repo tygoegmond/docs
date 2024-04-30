@@ -78,7 +78,9 @@
       "pages": [
         "api-reference/chargers/get",
         "api-reference/chargers/create",
-        "api-reference/chargers/charger"
+        "api-reference/chargers/charger",
+        "api-reference/chargers/proxy/get",
+        "api-reference/chargers/proxy/update"
       ]
     },
     {
