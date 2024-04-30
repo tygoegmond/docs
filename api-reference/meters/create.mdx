@@ -1,0 +1,69 @@
+---
+title: 'Create a new meter'
+api: 'POST /teams/{team_id}/chargers'
+description: 'Creates a new meter'
+---
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required/>
+<ParamField body="type" type="string" required hidden/>
+<ParamField body="charger_id" type="integer" required hidden/>
+
+## Request
+<Tabs>
+    <Tab title="Path">
+        <ParamField path="team_id" type="integer" required>
+            The id of the team
+        </ParamField>
+    </Tab>
+    <Tab title="Body">
+        <ParamField body="type" type="MeterType" required>
+            The type of the meter
+            <Snippet file="types/Meter/MeterType.mdx"/>
+        </ParamField>
+        <ParamField body="charger_id" type="integer" required>
+            The id of the charger that acts as a meter
+        </ParamField>
+    </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+    <Tab title="Data">
+        <ResponseField name="data" type="Meter">
+            The newly created meter
+            <Expandable title="Meter">
+                <Snippet file="types/Meter/Meter.mdx"/>
+            </Expandable>
+        </ResponseField>
+    </Tab>
+    <Tab title="Example">
+        <CodeGroup>
+            ```json 200
+            {
+                "data": {
+                    "id": 6,
+                    "type": "ct_meter",
+                    "latest_data": {
+                        "l1": 0,
+                        "l2": 0,
+                        "l3": 0,
+                        "updated_at": "-"
+                    },
+                    "created_at": "2024-04-30T15:01:07.000000Z",
+                    "updated_at": "2024-04-30T15:01:07.000000Z"
+                }
+            }
+            ```
+            ```json 401 (Unauthorized)
+            {
+                "message": "Unauthenticated."
+            }
+            ```
+            ```json 404 (Not Found)
+            {
+                "message": "Cannot access this team. Please check if the team exists and you are a member of it."
+            }
+            ```
+        </CodeGroup>
+    </Tab>
+</Tabs>

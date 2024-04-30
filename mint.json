@@ -86,7 +86,8 @@
     {
       "group": "Meters",
       "pages": [
-        "api-reference/meters/get"
+        "api-reference/meters/get",
+        "api-reference/meters/create"
       ]
     },
     {
