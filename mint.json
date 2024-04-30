@@ -79,12 +79,8 @@
         "api-reference/chargers/get",
         "api-reference/chargers/create",
         "api-reference/chargers/charger",
-        {
-          "group": "Proxy",
-          "pages": [
-            "api-reference/chargers/proxy/get"
-          ]
-        }
+        "api-reference/chargers/proxy/get",
+        "api-reference/chargers/proxy/update"
       ]
     },
     {
