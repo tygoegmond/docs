@@ -1,0 +1,30 @@
+<ResponseField name="id" type="integer">
+    The identifier of the meter
+</ResponseField>
+<ResponseField name="type" type="string">
+    The type of the meter
+    <Snippet file="types/Meter/MeterType.mdx"/>
+</ResponseField>
+<ResponseField name="latest_data" type="MeterData">
+    The latest data of the meter
+    <Expandable title="MeterData">
+        <ResponseField name="l1" type="integer">
+            Current usage of L1 in mA
+        </ResponseField>
+        <ResponseField name="l2" type="integer">
+            Current usage of L2 in mA
+        </ResponseField>
+        <ResponseField name="l3" type="integer">
+            Current usage of L3 in mA
+        </ResponseField>
+        <ResponseField name="updated_at" type="string">
+            The date the meter data was last updated
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+<ResponseField name="created_at" type="string">
+    The date the meter was created
+</ResponseField>
+<ResponseField name="updated_at" type="string">
+    The date the meter was last updated
+</ResponseField>
