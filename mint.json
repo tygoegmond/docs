@@ -88,7 +88,8 @@
       "pages": [
         "api-reference/meters/get",
         "api-reference/meters/create",
-        "api-reference/meters/meter"
+        "api-reference/meters/meter",
+        "api-reference/meters/delete"
       ]
     },
     {
