@@ -46,6 +46,9 @@ description: 'Returns the transactions of a charger'
         <ResponseField name="reservation_id" type="?integer">
           The identifier of the reservation this transaction belongs to
         </ResponseField>
+        <ResponseField name="id_tag" type="string">
+           The identifier of the RFID card used for the transaction
+        </ResponseField>
         <ResponseField name="meter_start" type="integer">
           The meter value at the start of the transaction
         </ResponseField>
@@ -91,11 +94,12 @@ description: 'Returns the transactions of a charger'
       ```json 200
       {
         "data": [
-          { 
+          {
             "id": 2,
             "charger_id": 2,
             "charger_connector_id": 2,
             "reservation_id": null,
+            "id_tag": "XXXXX",
             "meter_start": 1191,
             "meter_stop": 1198,
             "total_kwh": "0.01",
@@ -114,6 +118,7 @@ description: 'Returns the transactions of a charger'
               "charger_id": 2,
               "charger_connector_id": 2,
               "reservation_id": null,
+              "id_tag": "XXXXX",
               "meter_start": 1198,
               "meter_stop": 1198,
               "total_kwh": "0.00",
@@ -130,7 +135,7 @@ description: 'Returns the transactions of a charger'
         ]
 
         // + Pagination
-      } 
+      }
       ```
       ```json 401 (Unauthorized)
       {
