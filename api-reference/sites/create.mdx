@@ -13,10 +13,6 @@ description: 'Creates a new site'
 <ParamField body="postal_code" type="string" required hidden />
 <ParamField body="city" type="string" required hidden />
 <ParamField body="country" type="string" required hidden />
-<ParamField body="phase" type="Phase" required hidden />
-<ParamField body="main_fuse_amperage" type="integer" required hidden />
-<ParamField body="net_type" type="SiteNetType" required hidden />
-<ParamField body="load_management" type="SiteLoadManagement" required hidden />
 
 ## Request
 <Tabs>
@@ -47,21 +43,6 @@ description: 'Creates a new site'
     <ParamField body="country" type="string" required>
       The country of the new site
     </ParamField>
-    <ParamField body="phase" type="Phase" required>
-      The phase of the main fuse of the new site
-      <Snippet file="types/Site/SitePhase.mdx" />
-    </ParamField>
-    <ParamField body="main_fuse_amperage" type="integer" required>
-      The amperage of the main fuse of the new site
-    </ParamField>
-    <ParamField body="net_type" type="SiteNetType" required>
-      The net type of the new site
-      <Snippet file="types/Site/SiteNetType.mdx" />
-    </ParamField>
-    <ParamField body="load_management" type="SiteLoadManagement" required>
-      The load management system of the new site
-      <Snippet file="types/Site/SiteLoadManagement.mdx" />
-    </ParamField>
   </Tab>
 </Tabs>
 
@@ -88,17 +69,8 @@ description: 'Creates a new site'
             "house_number_addition": null,
             "city": "Lisse",
             "country": "BE",
-            "provider_id": null,
-            "phase": "3-phase",
-            "main_fuse_amperage": 50,
-            "load_management": "powersharing",
             "created_at": "2023-09-25T12:24:28.000000Z",
             "updated_at": "2023-11-06T12:50:23.000000Z",
-            "net_type": "TN",
-            "pivot": {
-              "team_id": 35231346,
-              "site_id": 209
-            }
         }
       }
       ```
