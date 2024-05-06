@@ -70,7 +70,15 @@
       "pages": [
         "api-reference/sites/get",
         "api-reference/sites/create",
-        "api-reference/sites/site"
+        "api-reference/sites/site",
+        {
+          "group": "Chargers",
+          "pages": [
+            "api-reference/sites/chargers/get",
+            "api-reference/sites/chargers/create",
+            "api-reference/sites/chargers/delete"
+          ]
+        }
       ]
     },
     {
