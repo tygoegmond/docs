@@ -1,0 +1,108 @@
+---
+title: 'Get Chargers'
+api: 'GET /teams/{team_id}/sites/{site_id}/chargers'
+description: 'Returns all the chargers that are associated with a site.'
+---
+## Request
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required/>
+<ParamField path="site_id" type="integer" hidden required/>
+<Snippet file="hidden-pagination-fields.mdx"/>
+
+<Tabs>
+    <Tab title="Path">
+        <ParamField path="team_id" type="integer" required>
+            The id of the team
+        </ParamField>
+        <ParamField path="site_id" type="integer" required>
+            The id of the site
+        </ParamField>
+    </Tab>
+    <Tab title="Query">
+        <Snippet file="pagination-fields.mdx"/>
+    </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+    <Tab title="Data">
+        <ResponseField name="data" type="Charger[]">
+            Array of chargers
+            <Expandable title="Charger">
+                <Snippet file="types/Charger/Charger.mdx"/>
+                <ResponseField name="connectors" type="ChargerConnector[]">
+                    Array of connectors
+                    <Expandable title="Charger">
+                        <Snippet file="types/Charger/ChargerConnector.mdx"/>
+                    </Expandable>
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Tab>
+    <Tab title="Example">
+        <CodeGroup>
+            ```json 200
+            {
+                "data": [
+                    {
+                        "id": 596411,
+                        "identity": "VTT_0001",
+                        "connection_status": "offline",
+                        "status": "Available",
+                        "error": "NoError",
+                        "error_info": null,
+                        "created_at": "2023-09-20T12:40:39.000000Z",
+                        "updated_at": "2023-09-21T12:55:33.000000Z",
+                        "connectors": [
+                            {
+                                "id": 1655489,
+                                "charger_id": 596411,
+                                "connector_id": 1,
+                                "status": "Available",
+                                "error": "NoError",
+                                "error_info": null,
+                                "created_at": "2023-11-01T09:44:32.000000Z",
+                                "updated_at": "2023-11-01T10:15:36.000000Z"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 866541,
+                        "identity": "VTT_0002",
+                        "connection_status": "online",
+                        "status": "Available",
+                        "error": "NoError",
+                        "error_info": null,
+                        "created_at": "2023-09-20T12:40:39.000000Z",
+                        "updated_at": "2023-09-21T12:55:33.000000Z",
+                        "connectors": [
+                            {
+                                "id": 1657489,
+                                "charger_id": 866541,
+                                "connector_id": 1,
+                                "status": "Available",
+                                "error": "NoError",
+                                "error_info": null,
+                                "created_at": "2023-11-01T09:44:32.000000Z",
+                                "updated_at": "2023-11-01T10:15:36.000000Z"
+                            }
+                        ]
+                    }
+                ]
+
+                // + Pagination
+            }
+            ```
+            ```json 401 (Unauthorized)
+            {
+                "message": "Unauthenticated."
+            }
+            ```
+            ```json 404 (Not Found)
+            {
+                "message": "Cannot access this site. Please check if you have access to this team/site."
+            }
+            ```
+        </CodeGroup>
+    </Tab>
+</Tabs>

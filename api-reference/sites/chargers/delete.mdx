@@ -1,0 +1,47 @@
+---
+title: 'Disassociate Charger'
+api: 'DELETE /teams/{team_id}/sites/{site_id}/chargers/{charger_id}'
+description: 'Disassociate a charger from a site'
+---
+## Request
+{/* Hidden fields for discovery */}
+<ParamField path="team_id" type="integer" hidden required/>
+<ParamField path="site_id" type="integer" hidden required/>
+<ParamField path="charger_id" type="integer" hidden required/>
+
+<Tabs>
+    <Tab title="Path">
+        <ParamField path="team_id" type="integer" required>
+            The id of the team
+        </ParamField>
+        <ParamField path="site_id" type="integer" required>
+            The id of the meter
+        </ParamField>
+        <ParamField path="charger_id" type="integer" required>
+            The id of the charger
+        </ParamField>
+    </Tab>
+</Tabs>
+
+## Response
+<Tabs>
+    <Tab title="Example">
+        <CodeGroup>
+            ```json 200
+            {
+                "message": "Charger detached successfully."
+            }
+            ```
+            ```json 401 (Unauthorized)
+            {
+                "message": "Unauthenticated."
+            }
+            ```
+            ```json 404 (Not Found)
+            {
+                "message": "Cannot find this charger. Please check if you have access to this team/site and the charger is attached to the site."
+            }
+            ```
+        </CodeGroup>
+    </Tab>
+</Tabs>
