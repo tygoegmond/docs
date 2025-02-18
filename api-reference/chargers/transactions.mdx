@@ -7,6 +7,9 @@ description: 'Returns the transactions of a charger'
 {/* Hidden fields for discovery */}
 <ParamField path="team_id" type="integer" hidden required />
 <ParamField path="charger_id" type="integer" hidden required />
+<ParamField query="date_from" type="datetime" hidden />
+<ParamField query="date_to" type="datetime" hidden />
+<ParamField query="limit" type="integer" hidden />
 <ParamField query="order_by" type="string" hidden />
 <Snippet file="hidden-pagination-fields.mdx" />
 
@@ -20,6 +23,16 @@ description: 'Returns the transactions of a charger'
     </ParamField>
   </Tab>
   <Tab title="Query">
+    <ParamField query="date_from" type="datetime">
+      The start date of the period to retrieve the transactions for
+    </ParamField>
+    <ParamField query="date_to" type="datetime">
+      The end date of the period to retrieve the transactions for
+    </ParamField>
+    <ParamField query="limit" default="25" type="integer">
+      The amount of meter values to retrieve, limited to 10000 per request 
+      <Info>We welcome your feedback on the maximum limit, and encourage you [to get in touch with us](https://volttime.com/contact-us) should you have any comments or suggestions.</Info>
+    </ParamField>
     <ParamField query="order_by" default="asc" type="string">
       The order of the transactions
       <Snippet file="types/Global/OrderBy.mdx" />
